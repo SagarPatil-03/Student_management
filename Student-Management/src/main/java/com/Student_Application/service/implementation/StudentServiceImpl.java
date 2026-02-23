@@ -55,4 +55,11 @@ public class StudentServiceImpl implements StudentService {
 
         repo.delete(existing);
     }
+    
+    public Student updateAll(long id ,Student s2)
+    {
+    	
+    	Student s = repo.findById(id).orElseThrow(()->new Resource("Not found"));
+    	s.setAge(s2.getAge());
+    	return repo.save(s);    }
 }
