@@ -55,8 +55,8 @@ public class StudentServiceImpl implements StudentService {
 
         repo.delete(existing);
     }
-    
-    public Student updateAll(long id ,Student s2)
+    @Override
+    public Student updateAll(Long id ,Student s2)
     {
     	
     	Student s = repo.findById(id).orElseThrow(()->new Resource("Not found"));
